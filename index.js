@@ -53,28 +53,7 @@ app.get("/", (req,res) => {
     })
 })
 
-/* codigo para acceder a los datos de cada link individual
-   links.forEach(link => axios.get(urlbase+link).then((response)=> {
-        if(response.status === 200) {
-            const html = response.data
-            const $ = cheerio.load(html)
-            console.log(html)
-        }}))
-*/
-/*
-//lo siguiente esta mal porque me trae los h1 de la url principal y no de los links
-links.forEach(link => {  
-    $("h1").each((index,element) => {
-    const newRapero = {
-    title: $(element).text(),
-    //img: $(element).attr("href"),
-    //p: $(element).text()
-    }
-    raperos.push(newRapero)
-    })
-})
 
-*/
 app.listen(3000, () => {
     console.log("Express está escuchando en el puerto 3000")
 })
