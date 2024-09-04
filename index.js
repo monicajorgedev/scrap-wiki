@@ -1,7 +1,10 @@
+//mi ejercicio
+
 const axios = require("axios")
 const cheerio = require("cheerio")
 const express = require("express")
 const app = express()
+
 const url = 'https://es.wikipedia.org/wiki/Categor%C3%ADa:M%C3%BAsicos_de_rap'
 const urlbase = "https://es.wikipedia.org"
 const links = []
@@ -11,7 +14,7 @@ const obtainInfoFromUrl = (link, res) => {
         if(response.status === 200) {
             const html = response.data
             const $ = cheerio.load(html)
-            const titulo = $("h1").contents().first().text();
+            const titulo = $("h1").text();
             const imagenes = []
             $('img').each((index,element) => {
                 const img = $(element).attr("src")
